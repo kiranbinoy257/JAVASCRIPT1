@@ -27,9 +27,22 @@ function getData(){
         console.log(data);
         str=``
         data.map((todo)=>{
-            str+=`<li>${todo.id}---${todo.completed}-------------${todo.title}</li>`
+            str+=`<li>${todo.completed?"complete":"notcomplete"}//////////////////////////${todo.title}</li>`
         })
+        console.log(str);
         document.getElementById("list").innerHTML=str
     })
     .catch((error)=>{console.log(error);})
+    .then((val))
 }
+
+
+
+
+// function shilaf(){
+//     fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((res)=>{return res.json()})
+//     .then((data)=>{
+//         console.log(data)
+//         document.getElementById("list").innerHTML=data
+//     })}
